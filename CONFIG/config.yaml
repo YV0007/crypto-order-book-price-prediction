@@ -1,0 +1,54 @@
+project:
+  name: LOB_Project
+  symbol: BTCUSDT
+  timezone: UTC
+
+exchange:
+  name: binance
+  rest_url: https://api.binance.com
+  websocket_url: wss://stream.binance.com:9443/ws
+  depth_levels: 20
+  snapshot_interval_seconds: 5
+
+data:
+  raw_orderbook_dir: data/raw/orderbook_top20
+  cleaned_orderbook_dir: data/interim/cleaned_orderbook
+  ready_for_features_dir: data/processed/ready_for_features
+
+cleaning:
+  spread_outlier_method: "remove"
+  spread_upper_quantile: 0.99
+  max_allowed_spread: 1.0
+  winsorize_sizes: true
+  winsor_lower_quantile: 0.001
+  winsor_upper_quantile: 0.99
+
+features:
+  levels: 20
+  rolling_windows: [10, 50, 100]
+
+targets:
+  horizon_rows: 10
+  neutral_threshold_bps: 1.0
+
+target:
+  target_mode: "absolute"
+  horizon_seconds: 5
+  threshold_abs: 0.5
+  threshold_candidates: [0.1, 0.2, 0.3, 0.5, 0.7, 1.0]
+  timestamp_tolerance_seconds: 0.5
+
+models:
+  random_state: 42
+  test_size: 0.2
+
+backtest:
+  fee_bps: 1.0
+  slippage_bps: 1.0
+  signal_threshold: 0.75
+  direction_margin: 0.00
+  neutral_max_probability: 0.30
+
+logging:
+  level: INFO
+  file: logs/lob_project.log

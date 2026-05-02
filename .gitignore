@@ -1,0 +1,51 @@
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache/build output
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Jupyter artifacts
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Data and generated artifacts
+data/raw/
+data/interim/
+data/processed/
+models/
+reports/
+logs/
+
+# Large/generated file types
+*.parquet
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.jsonl
+*.gz
+
+# Runtime outputs
+*.log
