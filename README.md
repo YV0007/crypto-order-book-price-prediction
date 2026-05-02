@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BTCUSDT Limit Order Book ML MVP
 
 Python-only research pipeline for BTCUSDT limit order book machine learning.
@@ -207,3 +208,7 @@ This means the project is a valid research baseline, not a deployable strategy.
 - calibrate model probabilities
 - add more realistic spread, maker/taker, latency, and fill assumptions
 - compare tabular baselines with sequence models after the data pipeline is stable
+=======
+# crypto-order-book-price-prediction
+Machine learning project for short-term BTC price movement prediction using limit order book data, order book imbalance, spread, depth, and market microstructure features.
+>>>>>>> e2f85a67dde862adf0419664a31f5ec1f315982d
