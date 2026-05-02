@@ -1,44 +1,33 @@
-# Python environments
+# Virtual environments
 .venv/
 venv/
 env/
-ENV/
 
-# Python cache/build output
+# Python cache
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 .pytest_cache/
-.mypy_cache/
-.ruff_cache/
-build/
-dist/
-*.egg-info/
 
-# OS/editor files
+# macOS
 .DS_Store
-.vscode/
-.idea/
 
-# Secrets and local environment
+# Environment secrets
 .env
-.env.*
-!.env.example
 
-# Jupyter artifacts
+# Jupyter checkpoints
 .ipynb_checkpoints/
-**/.ipynb_checkpoints/
 
-# Data and generated artifacts
+# Generated data
 data/raw/
 data/interim/
 data/processed/
+
+# Generated artifacts
 models/
 reports/
 logs/
 
-# Large/generated file types
+# Heavy/generated files
 *.parquet
 *.joblib
 *.pkl
@@ -46,6 +35,4 @@ logs/
 *.pth
 *.jsonl
 *.gz
-
-# Runtime outputs
 *.log
